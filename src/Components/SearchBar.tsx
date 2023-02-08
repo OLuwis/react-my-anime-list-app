@@ -3,7 +3,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useState } from 'react';
 import { Form } from "react-router-dom"
 
-const SearchBar = (props: {className: string, category: string, changeCategory: React.Dispatch<React.SetStateAction<string>>, inputValue: string, setInput: React.Dispatch<React.SetStateAction<string>>, setMenu: () => void}) => {
+const SearchBar = (props: {className: string, category: string, changeCategory: React.Dispatch<React.SetStateAction<string>>, inputValue: string, setInput: React.Dispatch<React.SetStateAction<string>>, setMenu: any}) => {
     const [ reload, setReload ] = useState(true)
     const [ openSelect, setOpenSelect ] = useState(false)
 
