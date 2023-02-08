@@ -47,10 +47,10 @@ const SearchPage = () => {
             </section>
             <section className="w-full text-center" id="results">
                 <h1 className="font-medium text-2xl my-5">Results for {window.location.search.split("&")[0].substring(3).split("+").join(" ")}</h1>
-                <div className="grid sm:grid-cols-5 grid-cols-2 gap-y-3.5">
+                <div className="grid sm:grid-cols-5 grid-cols-2 gap-y-3.5 place-items-center place-content-start">
                     {(loading && window.matchMedia("(max-width: 640px)").matches) ? [1,2,3,4].map(sample => <CardSkeleton key={sample}/>) : loading && [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(sample => <CardSkeleton key={sample}/>)}
-                    {(data.length > 0 && !loading) && data.map((cards: {title: string, images: {jpg: {image_url: string}}, score:number, scored_by: number, members: number, mal_id: number}) => {
-                    return <Card title={cards.title} img={cards.images.jpg.image_url} link={window.location.pathname.search("anime") !== -1 ? `/anime/${cards.mal_id}/full` : `/manga/${cards.mal_id}/full`} rate={cards.score} reviewers={cards.scored_by} members={cards.members} />})}
+                    {(data.length > 0 && !loading) && data.map((cards: {title: string, images: {webp: {image_url: string}}, score:number, scored_by: number, members: number, mal_id: number}) => {
+                    return <Card title={cards.title} img={cards.images.webp.image_url} link={window.location.pathname.search("anime") !== -1 ? `/anime/${cards.mal_id}/full` : `/manga/${cards.mal_id}/full`} rate={cards.score} reviewers={cards.scored_by} members={cards.members} />})}
                     {(data.length > 0 && !loading) && <Pagination currentPage={pagination.current_page} lastPage={pagination.last_visible_page} />}
                 </div>
             </section>

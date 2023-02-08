@@ -26,7 +26,10 @@ const Navbar = (props: {category: [string, React.Dispatch<React.SetStateAction<s
     <header className=" w-full h-20">
         <nav className="max-w-screen-lg mx-auto p-5 w-full h-full flex items-center justify-between relative">
             <Link to="/" className="p-2 px-4 font-semibold rounded-lg bg-blue-600 text-white shadow-md
-            hover:bg-blue-500">NotMyAnimeList</Link>
+            hover:bg-blue-500" onClick={() => {
+                document.body.style.overflow = "auto"
+                return setMenu(false)
+            }}>NotMyAnimeList</Link>
             <div className={`items-center sm:gap-5 ${menu === false ? "hidden" : "flex"} absolute sm:static flex-col sm:flex-row top-full bg-slate-50 left-0 w-full sm:w-auto px-4 gap-3 sm:px-0 dark:bg-slate-900 h-screen sm:h-auto z-20`} id="menu">
                 <div className='relative dark:text-white' id="menu-anime" onClick={() => {
                         hoverMenu === 1 ? setHoverMenu(0) : setHoverMenu(1)
@@ -92,7 +95,10 @@ const Navbar = (props: {category: [string, React.Dispatch<React.SetStateAction<s
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Releasing</Link>
                     </div>
                 </div>
-                <SearchBar className={''} category={props.category[0]} changeCategory={props.category[1]} inputValue={props.category[2]} setInput={props.category[3]} />
+                <SearchBar className={''} category={props.category[0]} changeCategory={props.category[1]} inputValue={props.category[2]} setInput={props.category[3]} setMenu={() => {
+                    setMenu(false)
+                    return document.body.style.overflow = "auto"
+                }}/>
                 <DarkModeIcon className={`p-1.5 rounded-lg cursor-pointer bg-slate-100 shadow-md
                 hover:bg-slate-200 ${theme === "light" ? "block" : "hidden"} dark:bg-slate-800 dark:fill-white dark:hover:bg-slate-700`} fontSize="large" onClick={() => setTheme("dark")} />
                 <LightModeIcon className={`p-1.5 rounded-lg cursor-pointer bg-slate-100 shadow-md
