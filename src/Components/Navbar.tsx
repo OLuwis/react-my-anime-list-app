@@ -33,15 +33,30 @@ const Navbar = (props: {category: [string, React.Dispatch<React.SetStateAction<s
                     }} onMouseEnter={() => setHoverMenu(1)} onMouseLeave={() => setHoverMenu(0)}>
                     <label className='flex items-center cursor-pointer'>Anime<ArrowDropDownIcon className="-translate-y-0.5 -mx-1 p-0.5" fontSize="large" /></label>
                     <div className={`absolute top-full left-1/2 -translate-x-1/2 flex-col whitespace-nowrap bg-slate-100 rounded-md overflow-hidden shadow-md z-10 ${hoverMenu === 1 ? "flex" : "hidden"} dark:bg-slate-800`}>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/anime?type=tv&filter=bypopularity&page=1" className="px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/anime?type=tv&filter=bypopularity&page=1" className="px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700">Top Animes</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/anime?type=movie&filter=bypopularity&page=1" className="px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/anime?type=movie&filter=bypopularity&page=1" className="px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700">Top Movies</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/anime?type=ova&filter=bypopularity&page=1" className="px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/anime?type=ova&filter=bypopularity&page=1" className="px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700">Top OVAs</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="/" className="px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="/" className="px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700">Top Season</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/anime?filter=airing&page=1" className="px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/anime?filter=airing&page=1" className="px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700">Top Airing</Link>
                     </div>
                 </div>
@@ -50,15 +65,30 @@ const Navbar = (props: {category: [string, React.Dispatch<React.SetStateAction<s
                     }} onMouseEnter={() => setHoverMenu(2)} onMouseLeave={() => setHoverMenu(0)}>
                     <label className='flex items-center cursor-pointer'>Manga<ArrowDropDownIcon className="-translate-y-0.5 -mx-1 p-0.5" fontSize="large" /></label>
                     <div className={`absolute top-full left-1/2 -translate-x-1/2 flex-col whitespace-nowrap bg-slate-100 rounded-md overflow-hidden shadow-md z-10 ${hoverMenu === 2 ? "flex" : "hidden"} dark:bg-slate-800`}>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/manga?type=manga&filter=bypopularity&page=1" className='px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/manga?type=manga&filter=bypopularity&page=1" className='px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Mangas</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/manga?type=manhwa&filter=bypopularity&page=1" className='px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/manga?type=manhwa&filter=bypopularity&page=1" className='px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Manhwas</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/manga?type=novel&filter=bypopularity&page=1" className='px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/manga?type=novel&filter=bypopularity&page=1" className='px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Novels</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/manga?type=oneshot&filter=bypopularity&page=1" className='px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/manga?type=oneshot&filter=bypopularity&page=1" className='px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top OneShots</Link>
-                        <Link onClick={() => setTimeout(() => window.matchMedia("(max-width: 640px)").matches && setMenu(false) ,100)} to="top/manga?filter=publishing&page=1" className='px-4 py-2.5
+                        <Link onClick={() => setTimeout(() => {
+                            window.matchMedia("(max-width: 640px)").matches && setMenu(false)
+                            return document.body.style.overflow = "auto"
+                        } ,100)} to="top/manga?filter=publishing&page=1" className='px-4 py-2.5
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Releasing</Link>
                     </div>
                 </div>
