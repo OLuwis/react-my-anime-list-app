@@ -24,7 +24,7 @@ const SearchPage = () => {
     return (
         <main className="w-full p-5 max-w-screen-lg mx-auto h-auto gap-y-3 gap-x-5 sm:gap-x-0 dark:text-white py-1.5">
             <section className="w-full max-w-screen-md mx-auto grid sm:grid-cols-4 mt-2 sm:gap-5 grid-cols-5 gap-2 px-4" id="filters">
-                <SearchBar className="sm:col-span-3 col-span-4" category={category[0]} changeCategory={category[1]} inputValue={category[2]} setInput={category[3]} />
+                <SearchBar className="sm:col-span-3 col-span-4" category={category[0]} changeCategory={category[1]} inputValue={category[2]} setInput={category[3]} changeMenu="" />
                 <div className="p-1.5 rounded-md cursor-pointer bg-slate-100 dark:bg-slate-800 dark:fill-white hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center col-span-1 gap-1 shadow-md" onClick={() => setContainer(!container)} >
                     <TuneIcon className="sm:p-0 p-0.5" />{window.matchMedia("(min-width: 640px)").matches && "Filters"}
                 </div>
