@@ -95,7 +95,7 @@ const Navbar = (props: {category: [string, React.Dispatch<React.SetStateAction<s
                         hover:bg-slate-200 dark:hover:bg-slate-700'>Top Releasing</Link>
                     </div>
                 </div>
-                <SearchBar className={''} category={props.category[0]} changeCategory={props.category[1]} inputValue={props.category[2]} setInput={props.category[3]} setMenu={() => {
+                <SearchBar className={''} category={props.category[0]} changeCategory={props.category[1]} inputValue={props.category[2]} setInput={props.category[3]} changeMenu={() => {
                     setMenu(false)
                     return document.body.style.overflow = "auto"
                 }}/>

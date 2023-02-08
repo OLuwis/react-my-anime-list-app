@@ -3,12 +3,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useState } from 'react';
 import { Form } from "react-router-dom"
 
-const SearchBar = (props: {className: string, category: string, changeCategory: React.Dispatch<React.SetStateAction<string>>, inputValue: string, setInput: React.Dispatch<React.SetStateAction<string>>, setMenu: any}) => {
+const SearchBar = (props: {className: string, category: string, changeCategory: React.Dispatch<React.SetStateAction<string>>, inputValue: string, setInput: React.Dispatch<React.SetStateAction<string>>, changeMenu: any}) => {
     const [ reload, setReload ] = useState(true)
     const [ openSelect, setOpenSelect ] = useState(false)
 
     return (
-        <Form className={`bg-slate-100 flex items-center rounded-md shadow-md w-full dark:bg-slate-800 dark:text-white p-0.5 px-1 ${props.className}`} id="searchbar" method='get' action={`/${props.category}`} onSubmit={props.setMenu}>
+        <Form className={`bg-slate-100 flex items-center rounded-md shadow-md w-full dark:bg-slate-800 dark:text-white p-0.5 px-1 ${props.className}`} id="searchbar" method='get' action={`/${props.category}`} onSubmit={props.changeMenu}>
             <SearchIcon className="p-1.5 pl-2" fontSize="large" />
             <div className='capitalize flex items-center cursor-pointer relative justify-center pl-1' id='select' onClick={() => setOpenSelect(!openSelect)}>
                 {props.category} <ArrowDropDownIcon className="-translate-y-0.5 p-1 -mx-1" fontSize="large" />
